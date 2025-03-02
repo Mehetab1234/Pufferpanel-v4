@@ -1,0 +1,9 @@
+{
+  "tasks": {
+    "setup": "apt update && apt install -y curl sudo && curl -fsSL https://package.pufferpanel.com/GPG-Key | sudo gpg --dearmor -o /usr/share/keyrings/pufferpanel.gpg && echo \"deb [signed-by=/usr/share/keyrings/pufferpanel.gpg] https://package.pufferpanel.com/repository/ubuntu all main\" | sudo tee /etc/apt/sources.list.d/pufferpanel.list && apt update && apt install -y pufferpanel",
+    "start": "pufferpanel start && tail -f /dev/null"
+  },
+  "ports": {
+    "8080": "PufferPanel Web UI"
+  }
+}
